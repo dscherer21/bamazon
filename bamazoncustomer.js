@@ -5,7 +5,7 @@ var Table = require('cli-table');
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: '',
+	password: 'de838225',
 	database: 'Bamazon',
 });
 
@@ -65,11 +65,11 @@ var purchase = function(){
 
 		//connects to the mysql database and selects the item the user selected above based on the item id number entered
 		connection.query('SELECT * FROM Products WHERE ItemID=?', productPurchased[0].itemID, function(err, res){
-				if(err) console.log(err, 'That item ID doesn\'t exist');
+				if(err) console.log(err, "That item ID doesn't exist");
 
 				//if the stock quantity available is less than the amount that the user wanted to purchase then the user will be alerted that the product is out of stock
 				if(res[0].StockQuantity < productPurchased[0].Quantity){
-					console.log('That product is out of stock!');
+					console.log('Sorry! We are out of that!');
 					connection.end();
 
 				//otherwise if the stock amount available is more than or equal to the amount being asked for then the purchase is continued and the user is alerted of what items are being purchased, how much one item is and what the total amount is
@@ -90,7 +90,7 @@ var purchase = function(){
 						return resultOne;
 					})
 
-					console.log('Total: ' + saleTotal);
+					console.log('Total: $' + saleTotal);
 
 					//this variable contains the newly updated stock quantity of the item purchased
 					newQuantity = res[0].StockQuantity - productPurchased[0].Quantity;
@@ -100,7 +100,7 @@ var purchase = function(){
 						// if(err) throw err;
 						// console.log('Problem ', err);
 						console.log('');
-						console.log(colors.cyan('Your order has been processed.  Thank you for shopping with us!'));
+						console.log(colors.cyan('Your order has been processed.  NOW GET LOST!'));
 						console.log('');
 
 						connection.end();
