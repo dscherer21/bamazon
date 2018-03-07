@@ -1,0 +1,32 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "An Amazon mock up using the command line interface.",
+  "main": "bamazoncustomer.js",
+  "dependencies": {
+    "cli-table": "^0.3.1",
+    "inquirer": "^5.1.0",
+    "mysql": "^2.15.0",
+    "prompt": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dscherer21/bamazon.git"
+  },
+  "keywords": [
+    "mysql",
+    "prompt",
+    "colors/safe",
+    "cli-table"
+  ],
+  "author": "dscherer21",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dscherer21/bamazon/issues"
+  },
+  "homepage": "https://github.com/dscherer21/bamazon#readme"
+}
