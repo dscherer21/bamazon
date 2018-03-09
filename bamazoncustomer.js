@@ -2,10 +2,11 @@ var mysql = require('mysql');
 var prompt = require('prompt');
 var colors = require('colors/safe');
 var Table = require('cli-table');
+require('dotenv').config();
 var connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: 'de838225',
+	password: process.env.DB_PASS,
 	database: 'Bamazon',
 });
 
